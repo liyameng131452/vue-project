@@ -52,7 +52,7 @@ export default new Router({
       component: NewsList
     },
     {
-      path: '/news/detail',
+      path: '/news/detail/:id',
       component: NewsDetail
     },
     //图片的
@@ -64,5 +64,6 @@ export default new Router({
       path: '/pics/detail',
       component: PictureDetail
     },
-  ]
+  ],
+  linkActiveClass:"mui-active"
 })
