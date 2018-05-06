@@ -11,6 +11,8 @@ import Cart from "@/components/tabbar/cart"
 import Home from "@/components/tabbar/home"
 import Member from "@/components/tabbar/member"
 import Search from "@/components/tabbar/search"
+import Gooddesc from "@/components/goods/desc"
+import Goodcomment from "@/components/goods/comment"
 Vue.use(Router)
 
 export default new Router({
@@ -43,8 +45,16 @@ export default new Router({
       component: GoodList
     },
     {
-      path: '/goods/detail',
+      path: '/goods/detail/:id',
       component: GoodDetail
+    },
+    {
+      path: '/goods/desc/:id',
+      component: Gooddesc
+    },
+    {
+      path: '/goods/comment/:id',
+      component: Goodcomment
     },
     //新闻的
     {
@@ -57,11 +67,11 @@ export default new Router({
     },
     //图片的
     {
-      path: '/pics',
+      path: '/pics/:id',
       component: PictureList
     },
     {
-      path: '/pics/detail',
+      path: '/pics/detail/:id',
       component: PictureDetail
     },
   ],

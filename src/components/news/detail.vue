@@ -1,15 +1,7 @@
 <template>
   <div class="page newspage">
     <div class="news-detail">
-      <div class="news-title">
-        <h4>{{newsinfo.title}}</h4>
-        <p>
-          <span>发表时间: {{newsinfo.add_time | dataformate("YYYY-MM-DD HH:mm:ss") }}</span>
-          <span class="mui-pull-right">点击： {{newsinfo.click}}次</span>
-        </p>
-      </div>
-      <hr>
-      <div class="news-content" v-html="newsinfo.content"></div>
+     <detail :info="newsinfo"></detail>
     </div>
     <div class="news-comments">
       <comment :id="$route.params.id"></comment>
@@ -19,7 +11,8 @@
 <script>
   import axios from "axios";
   import dataformate from "@/filter/datafilter"
-  import comment from "../common/comment"
+  import comment from "../common/comment";
+  import detail from "../common/detail"
 export default {
   data(){
     return {
@@ -40,7 +33,8 @@ export default {
     dataformate
   },
   components:{
-    comment
+    comment,
+    detail
   }
 }
 </script>
